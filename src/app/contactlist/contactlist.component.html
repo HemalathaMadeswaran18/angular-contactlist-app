@@ -1,0 +1,78 @@
+<p>contactlist works!</p>
+
+
+<h2 class="mt-2 text-center text-warning">Contact app</h2>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-4 offset-2">
+            <div class="mt-2">
+
+
+                <input type="text" class ="form-control" [(ngModel)]="contact.firstname" placeholder="firstname">
+            </div>
+
+            <div class="mt-2">
+
+
+                <input type="text" class ="form-control" [(ngModel)]="contact.lastname" placeholder="lastname">
+            </div>
+
+
+            <div class="mt-2">
+
+
+                <input type="text" class ="form-control" [(ngModel)]="contact.email" placeholder="email">
+            </div>
+
+
+            <div class="mt-2">
+
+
+                <input type="text" class ="form-control" [(ngModel)]="contact.city" placeholder="city">
+            </div>
+
+            <div class="mt-2">
+
+
+                <input type="text" class ="form-control" [(ngModel)]="contact.phone" placeholder="phone">
+            </div>
+
+            <div class="mt-2">
+
+<button class="btn btn-primary" (click)="addContact()">Submit</button>
+<button class="btn btn-secondary" (click)="updatetodbContact()">Update</button>
+<button class="btn btn-secondary" (click)="clear()">Clear</button>
+
+            </div>
+
+
+         
+
+
+
+        </div>
+    </div>
+</div>
+
+
+
+
+<div class="card-list">
+    <div class="card" *ngFor="let contact of contacts">
+      <div class="card-header">
+        {{ contact.firstname }}
+      </div>
+      <div class="card-body">
+        <p>Email: {{ contact.email }}</p>
+        <p>Phone: {{ contact.phone }}</p>
+        <!-- Other contact details as needed -->
+        <div class="button-container">
+          <button (click)="deleteContact(contact.id)" class="delete-button">Delete</button>
+          <button class="update-button" (click)="updateContact(contact)">Update</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  

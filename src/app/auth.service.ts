@@ -18,7 +18,13 @@ login(credentials:any){
 }
 
 isAuthenticated(token:any){
-  return this.http.post('http://localhost:9000/auth/isAuthenticated',token);
+
+  
+  return this.http.post('http://localhost:9000/auth/isAuthenticated',{},{
+    headers:{
+      Authorization:`Bearer ${token}`
+    }
+  });
 }
 
 }
